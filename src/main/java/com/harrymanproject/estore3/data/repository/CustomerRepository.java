@@ -28,4 +28,8 @@ public interface CustomerRepository extends JpaRepository<Customer, Integer> {
     private boolean customerHasFullName (Customer customer){
         return customer.getFirstName() != null  && customer.getLastName() != null;
     }
+
+    boolean existsByEmail(String email);
+
+    Customer findByEmail(String email);
 }
